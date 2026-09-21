@@ -1,1 +1,187 @@
-<h1>Bem-vindo ao faradezo.com.br</h1><p>O mexidao esta no ar!</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniSynergy Global | O Amanhã, Hoje</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-main: #f5f5f7;
+            --text-muted: #86868b;
+            --accent: #0066cc;
+            --accent-hover: #0077ed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animações de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+        }
+
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 0.9s; }
+
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--text-main); }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, #111 0%, #050505 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--text-muted);
+            max-width: 800px;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .btn {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: white;
+            transform: scale(1.05);
+        }
+
+        .features {
+            padding: 6rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: #0a0a0a;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            border: 1px solid #1a1a1a;
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="animate">
+        <div class="logo">OmniSynergy</div>
+        <nav>
+            <a href="#">Paradigma</a>
+            <a href="#">Ecossistema</a>
+            <a href="#">Mindset</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="animate delay-1">Redefinindo o intangível.</h1>
+        <p class="animate delay-2">Conectamos sinergias disruptivas através de ecossistemas quânticos para catalisar o potencial absoluto do seu mindset exponencial.</p>
+        <a href="#" class="btn animate delay-3">Desperte sua Jornada</a>
+    </section>
+
+    <section class="features">
+        <div class="feature-card animate delay-1">
+            <h3>Escalabilidade Holística</h3>
+            <p>Nossa arquitetura de pensamento não linear expande as fronteiras do inexplorado, pivotando métricas para um oceano azul de possibilidades.</p>
+        </div>
+        <div class="feature-card animate delay-2">
+            <h3>Agrupamento de Valor</h3>
+            <p>Sintetizamos a resiliência corporativa através de soluções B2B omnicanal que alavancam o core business do devir sistêmico.</p>
+        </div>
+        <div class="feature-card animate delay-3">
+            <h3>Disrupção Cognitiva</h3>
+            <p>Desconstruímos o paradigma tradicional para engajar stakeholders em uma jornada imersiva de hiper-crescimento auto-sustentável.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 OmniSynergy Global Vantguard. Todos os direitos reservados para o universo observável.</p>
+    </footer>
+
+</body>
+</html>
