@@ -1,187 +1,411 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faradezu's Global | O Amanhã, Hoje</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Eduardo Faradezo | Portfólio</title>
+
+    <!-- Carregando Tailwind CSS para estilos modernos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Carregando ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configurando Fonte Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        :root {
-            --bg-color: #050505;
-            --text-main: #f5f5f7;
-            --text-muted: #86868b;
-            --accent: #0066cc;
-            --accent-hover: #0077ed;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            /* Slate 900 */
+            color: #f8fafc;
+            /* Slate 50 */
         }
 
-        /* Animações de entrada */
+        /* Animação suave para a transição de páginas */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .animate {
-            animation: fadeIn 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-            opacity: 0;
+        /* Efeito glassmorphism para o menu fixo no topo */
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .delay-1 { animation-delay: 0.3s; }
-        .delay-2 { animation-delay: 0.6s; }
-        .delay-3 { animation-delay: 0.9s; }
-
-        header {
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+        /* Ocultar barra de rolagem mas manter funcionalidade */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
 
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
         }
 
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 2rem;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
         }
 
-        nav a:hover { color: var(--text-main); }
-
-        .hero {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: radial-gradient(circle at center, #111 0%, #050505 100%);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 300;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            color: var(--text-muted);
-            max-width: 800px;
-            margin-bottom: 3rem;
-            font-weight: 300;
-        }
-
-        .btn {
-            background-color: var(--text-main);
-            color: var(--bg-color);
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: white;
-            transform: scale(1.05);
-        }
-
-        .features {
-            padding: 6rem 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: #0a0a0a;
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            border: 1px solid #1a1a1a;
-            text-align: center;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 3rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            color: var(--text-muted);
-            font-size: 0.8rem;
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
         }
     </style>
 </head>
-<body>
 
-    <header class="animate">
-        <div class="logo">Faradezu's</div>
-        <nav>
-            <a href="#">Paradigma</a>
-            <a href="#">Ecossistema</a>
-            <a href="#">Mindset</a>
-        </nav>
-    </header>
+<body class="min-h-screen flex flex-col relative overflow-x-hidden">
 
-    <section class="hero">
-        <h1 class="animate delay-1">Redefinindo o intangível.</h1>
-        <p class="animate delay-2">Conectamos sinergias disruptivas através de ecossistemas quânticos para catalisar o potencial absoluto do seu mindset exponencial.</p>
-        <a href="#" class="btn animate delay-3">Desperte sua Jornada</a>
-    </section>
+    <!-- Menu de Navegação -->
+    <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="navigate('home')">
+                    <span
+                        class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
+                        <i class="fa-solid fa-code-branch mr-2 text-emerald-400"></i>Faradezo
+                    </span>
+                </div>
 
-    <section class="features">
-        <div class="feature-card animate delay-1">
-            <h3>Escalabilidade Holística</h3>
-            <p>Nossa arquitetura de pensamento não linear expande as fronteiras do inexplorado, pivotando métricas para um oceano azul de possibilidades.</p>
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <button onclick="navigate('home')"
+                        class="nav-link text-slate-300 hover:text-white transition-colors duration-200 font-semibold"
+                        data-target="home">Início</button>
+                    <button onclick="navigate('projetos')"
+                        class="nav-link text-slate-300 hover:text-white transition-colors duration-200 font-semibold"
+                        data-target="projetos">Projetos</button>
+                    <button onclick="navigate('impressao3d')"
+                        class="nav-link text-slate-300 hover:text-white transition-colors duration-200 font-semibold"
+                        data-target="impressao3d">Impressão 3D</button>
+                    <button onclick="navigate('jogos')"
+                        class="nav-link text-slate-300 hover:text-white transition-colors duration-200 font-semibold"
+                        data-target="jogos">Jogos</button>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="feature-card animate delay-2">
-            <h3>Agrupamento de Valor</h3>
-            <p>Sintetizamos a resiliência corporativa através de soluções B2B omnicanal que alavancam o core business do devir sistêmico.</p>
-        </div>
-        <div class="feature-card animate delay-3">
-            <h3>Disrupção Cognitiva</h3>
-            <p>Desconstruímos o paradigma tradicional para engajar stakeholders em uma jornada imersiva de hiper-crescimento auto-sustentável.</p>
-        </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2026 Faradezu's Global Vantguard. Todos os direitos reservados para o universo observável.</p>
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-b border-slate-700 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-4 space-y-2 flex flex-col">
+                <button onclick="navigate('home')"
+                    class="text-left px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700 transition-colors">Início</button>
+                <button onclick="navigate('projetos')"
+                    class="text-left px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700 transition-colors">Projetos</button>
+                <button onclick="navigate('impressao3d')"
+                    class="text-left px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700 transition-colors">Impressão
+                    3D</button>
+                <button onclick="navigate('jogos')"
+                    class="text-left px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700 transition-colors">Jogos</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+
+        <!-- SECÇÃO: INÍCIO -->
+        <section id="home" class="page-section active">
+            <div class="flex flex-col items-center justify-center text-center py-16 md:py-32">
+                <div class="inline-flex p-5 rounded-2xl bg-slate-800 mb-8 shadow-xl border border-slate-700">
+                    <i class="fa-solid fa-user-astronaut text-6xl text-emerald-400"></i>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">O mexidão está <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">no
+                        ar!</span></h1>
+                <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Bem-vindo ao meu espaço pessoal na internet. Este é o meu laboratório digital onde documento as
+                    minhas aventuras pelo mundo da eletrônica, modelagem 3D e as minhas horas de lazer.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
+                    <button onclick="navigate('projetos')"
+                        class="px-8 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all duration-300 shadow-lg shadow-emerald-900/50 flex items-center justify-center">
+                        <i class="fa-solid fa-bolt mr-2"></i> Explorar Projetos
+                    </button>
+                    <a href="mailto:contato@faradezo.com.br"
+                        class="px-8 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-semibold transition-all duration-300 border border-slate-600 flex items-center justify-center">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Entrar em Contato
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECÇÃO: PROJETOS DE ELETRÔNICA -->
+        <section id="projetos" class="page-section">
+            <div class="mb-12 border-b border-slate-700 pb-4">
+                <h2 class="text-3xl font-bold text-blue-400 flex items-center"><i
+                        class="fa-solid fa-microchip mr-4 text-4xl"></i>Projetos de Eletrônica</h2>
+                <p class="text-slate-400 mt-2 text-lg">Experimentos com Arduino, placas customizadas e automação.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card Projeto 1 -->
+                <div
+                    class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-500 transition-all duration-300 shadow-lg group">
+                    <div class="h-56 bg-slate-900 relative flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors"></div>
+                        <i
+                            class="fa-brands fa-usb text-7xl text-slate-600 group-hover:text-blue-400 transition-all duration-300 transform group-hover:scale-110"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Button Box Sim Racing</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">Desenvolvimento de um painel de botões
+                            customizado utilizando Arduino Micro. Programado em C++ para ser reconhecido nativamente
+                            como um joystick USB no PC.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-slate-900 border border-slate-700 text-sm rounded-full text-blue-300">Arduino</span>
+                            <span
+                                class="px-3 py-1 bg-slate-900 border border-slate-700 text-sm rounded-full text-blue-300">C++</span>
+                            <span
+                                class="px-3 py-1 bg-slate-900 border border-slate-700 text-sm rounded-full text-blue-300">Soldagem</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Projeto 2 -->
+                <div
+                    class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-emerald-500 transition-all duration-300 shadow-lg group">
+                    <div class="h-56 bg-slate-900 relative flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-emerald-500/10 group-hover:bg-emerald-500/20 transition-colors">
+                        </div>
+                        <i
+                            class="fa-solid fa-network-wired text-7xl text-slate-600 group-hover:text-emerald-400 transition-all duration-300 transform group-hover:scale-110"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Sensor IoT Residencial</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">Módulo com ESP32 para monitoramento de
+                            temperatura e humidade em tempo real. Integração via Wi-Fi e protocolo MQTT com servidor
+                            Home Assistant.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-slate-900 border border-slate-700 text-sm rounded-full text-emerald-300">ESP32</span>
+                            <span
+                                class="px-3 py-1 bg-slate-900 border border-slate-700 text-sm rounded-full text-emerald-300">IoT</span>
+                            <span
+                                class="px-3 py-1 bg-slate-900 border border-slate-700 text-sm rounded-full text-emerald-300">MQTT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECÇÃO: IMPRESSÃO 3D -->
+        <section id="impressao3d" class="page-section">
+            <div class="mb-12 border-b border-slate-700 pb-4">
+                <h2 class="text-3xl font-bold text-orange-400 flex items-center"><i
+                        class="fa-solid fa-cube mr-4 text-4xl"></i>Impressão 3D</h2>
+                <p class="text-slate-400 mt-2 text-lg">Modelagem de peças utilitárias, upgrades para a impressora e
+                    miniaturas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Item 3D 1 -->
+                <div
+                    class="bg-slate-800 rounded-xl p-5 border border-slate-700 hover:border-orange-500 transition-colors">
+                    <div class="h-48 bg-slate-900 rounded-lg mb-5 flex items-center justify-center">
+                        <i class="fa-solid fa-fan text-5xl text-orange-400/50"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Duto de Ventilação</h3>
+                    <p class="text-sm text-slate-400 mb-3">Upgrade para o hotend da impressora, melhorando o
+                        resfriamento das camadas com uma fan 5015.</p>
+                    <span class="text-xs font-bold text-orange-400 bg-orange-400/10 px-2 py-1 rounded">Material:
+                        PETG</span>
+                </div>
+
+                <!-- Item 3D 2 -->
+                <div
+                    class="bg-slate-800 rounded-xl p-5 border border-slate-700 hover:border-orange-500 transition-colors">
+                    <div class="h-48 bg-slate-900 rounded-lg mb-5 flex items-center justify-center">
+                        <i class="fa-solid fa-gamepad text-5xl text-orange-400/50"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Stand para Controle</h3>
+                    <p class="text-sm text-slate-400 mb-3">Suporte de mesa ergonômico desenhado sob medida para acomodar
+                        o controle do Xbox e headset.</p>
+                    <span class="text-xs font-bold text-gray-300 bg-gray-600 px-2 py-1 rounded">Material: PLA</span>
+                </div>
+
+                <!-- Item 3D 3 -->
+                <div
+                    class="bg-slate-800 rounded-xl p-5 border border-slate-700 hover:border-orange-500 transition-colors">
+                    <div class="h-48 bg-slate-900 rounded-lg mb-5 flex items-center justify-center">
+                        <i class="fa-solid fa-boxes-stacked text-5xl text-orange-400/50"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Gaveteiro Modular</h3>
+                    <p class="text-sm text-slate-400 mb-3">Sistema de caixas organizadoras para separar componentes
+                        eletrônicos, resistores e parafusos.</p>
+                    <span class="text-xs font-bold text-gray-300 bg-gray-600 px-2 py-1 rounded">Material: PLA</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECÇÃO JOGOS (Vitrine de Portfólio) -->
+        <section id="jogos" class="seccao-conteudo">
+            <h2>Jogos em Desenvolvimento</h2>
+            <p>Selecione um projeto para conhecer a história, ver os bastidores e apoiar.</p>
+
+            <!-- Galeria de Logos -->
+            <div class="galeria-jogos">
+
+                <!-- Projeto: Blacksmith -->
+                <a href="blacksmith.html" class="cartao-jogo">
+                    <!-- Substitua o src pelo caminho da sua imagem -->
+                    <img src="logo-blacksmith.jpg" alt="Logo do jogo Blacksmith">
+                    <h3>Blacksmith</h3>
+                </a>
+
+                <!-- Projeto: Comusekai -->
+                <a href="comusekai.html" class="cartao-jogo">
+                    <img src="logo-comusekai.jpg" alt="Logo do jogo Comusekai">
+                    <h3>Comusekai</h3>
+                </a>
+
+                <!-- Projeto: Heresia -->
+                <a href="heresia.html" class="cartao-jogo">
+                    <img src="logo-heresia.jpg" alt="Logo do jogo Heresia">
+                    <h3>Heresia</h3>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Um pouco de estilo (CSS) para deixar os logos alinhados lado a lado com efeito de clique -->
+        <style>
+            .galeria-jogos {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 30px;
+            }
+
+            .cartao-jogo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-decoration: none;
+                color: inherit;
+                width: 200px;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
+
+            .cartao-jogo:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .cartao-jogo img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+        </style>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-10 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center mb-6">
+                <i class="fa-solid fa-bolt text-emerald-500 text-2xl"></i>
+            </div>
+            <h2 class="text-xl font-bold text-white mb-6">faradezo.com.br</h2>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#"
+                    class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-lg hover:-translate-y-1">
+                    <i class="fa-brands fa-github text-xl"></i>
+                </a>
+                <a href="#"
+                    class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-500 hover:text-white transition-all duration-300 shadow-lg hover:-translate-y-1">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                </a>
+                <a href="mailto:contato@faradezo.com.br"
+                    class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-lg hover:-translate-y-1">
+                    <i class="fa-solid fa-envelope text-xl"></i>
+                </a>
+            </div>
+            <p class="text-slate-600 text-sm">© 2026 Eduardo Faradezo. Desenvolvido com muito café e código aberto.</p>
+        </div>
     </footer>
 
+    <!-- Script para navegação SPA e Menu Mobile -->
+    <script>
+        // Lógica de navegação entre seções
+        function navigate(sectionId) {
+            // Ocultar todas as seções removendo a classe 'active'
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Mostrar a seção selecionada adicionando a classe 'active'
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Atualizar estilo visual dos links do menu
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('data-target') === sectionId) {
+                    // Estilo Ativo
+                    link.classList.add('text-emerald-400');
+                    link.classList.remove('text-slate-300');
+                } else {
+                    // Estilo Inativo
+                    link.classList.remove('text-emerald-400');
+                    link.classList.add('text-slate-300');
+                }
+            });
+
+            // Fechar menu mobile automaticamente se estiver aberto
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+
+            // Fazer scroll suave de volta para o topo da página ao mudar de secção
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Lógica para abrir/fechar o menu em dispositivos móveis
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Inicializar o site exibindo a secção home
+        navigate('home');
+    </script>
 </body>
+
 </html>
