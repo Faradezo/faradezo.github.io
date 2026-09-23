@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blacksmith | Projetos - Eduardo Faradezo</title>
+
+    <!-- Carregando Tailwind CSS para estilos modernos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Menu de Navegação Simples (Voltar) -->
+    <nav class="glass-nav fixed w-full z-50 top-0">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center h-16">
+                <a href="index.html" class="text-slate-300 hover:text-white transition-colors duration-200 font-semibold flex items-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i> Voltar para o Portfólio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho / Hero Section -->
+    <header class="relative pt-16 h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+        <!-- Imagem de Fundo (Propaganda) -->
+        <div class="absolute inset-0 z-0">
+            <img src="BS/Propaganda.jpg" alt="Cenário de Blacksmith" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent"></div>
+        </div>
+        
+        <!-- Logo e Título -->
+        <div class="relative z-10 text-center px-4">
+            <img src="BS/Logo_simples.jpg" alt="Logo Blacksmith" class="mx-auto h-32 md:h-48 object-contain mb-4 rounded-xl shadow-2xl bg-white/10 p-2 backdrop-blur-sm">
+            <p class="text-xl md:text-2xl text-slate-300 font-light">Gerencie sua forja. Equipe o reino. Sobreviva à guerra.</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+
+        <!-- Seção: Sobre o Jogo (Placeholder) -->
+        <section class="mb-16 bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-lg">
+            <h2 class="text-3xl font-bold text-purple-400 mb-6 border-b border-slate-700 pb-2">
+                <i class="fa-solid fa-scroll mr-3"></i>O Projeto
+            </h2>
+            <div class="text-slate-300 space-y-4 leading-relaxed text-lg">
+                <p>
+                    <strong>[Substitua este texto futuramente]</strong> Blacksmith é um jogo de tabuleiro focado em gerenciamento de recursos e alocação de trabalhadores. Aqui você descreverá a premissa principal do jogo, o que inspirou a sua criação e qual é o objetivo dos jogadores em cada partida.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção: Galeria de Bastidores -->
+        <section>
+            <h2 class="text-3xl font-bold text-purple-400 mb-8 border-b border-slate-700 pb-2">
+                <i class="fa-solid fa-camera-retro mr-3"></i>Bastidores e Protótipos
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Imagem 1 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
+                    <div class="h-48 overflow-hidden bg-black">
+                        <img src="BS/Primeiro_teste.jpg" alt="Primeiro teste" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-white mb-1">Primeiro Teste de Mesa</h3>
+                        <p class="text-sm text-slate-400">Validando as regras iniciais e o fluxo de turnos na prática.</p>
+                    </div>
+                </div>
+
+                <!-- Imagem 2 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
+                    <div class="h-48 overflow-hidden bg-black">
+                        <img src="BS/Prototipo_sugestao_montagem.jpg" alt="Montagem da mesa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-white mb-1">Setup Completo</h3>
+                        <p class="text-sm text-slate-400">Visão geral dos componentes posicionados no protótipo físico.</p>
+                    </div>
+                </div>
+
+                <!-- Imagem 3 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
+                    <div class="h-48 overflow-hidden bg-black flex justify-center">
+                        <img src="BS/Kit_prototipo.jpg" alt="Componentes embalados" class="h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-white mb-1">Kit do Protótipo</h3>
+                        <p class="text-sm text-slate-400">Caixas e saquinhos com todas as peças necessárias para jogar.</p>
+                    </div>
+                </div>
+
+                <!-- Imagem 4 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
+                    <div class="h-48 overflow-hidden bg-black">
+                        <img src="BS/Tabuleiro_principal_V102.jpg" alt="Tabuleiro Impresso" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-white mb-1">Tabuleiro V1.02</h3>
+                        <p class="text-sm text-slate-400">Impressão e montagem da versão atualizada do tabuleiro principal.</p>
+                    </div>
+                </div>
+
+                <!-- Imagem 5 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
+                    <div class="h-48 overflow-hidden bg-black">
+                        <img src="BS/Tabuleiro_principal_V101.jpg" alt="Tabuleiro Digital" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-white mb-1">Layout do Tabuleiro V1.01</h3>
+                        <p class="text-sm text-slate-400">Arte digital pré-impressão com marcações de área.</p>
+                    </div>
+                </div>
+
+                <!-- Imagem 6 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
+                    <div class="h-48 overflow-hidden bg-black flex justify-center">
+                        <img src="BS/Prototipo_tokens.jpg" alt="Tokens customizados" class="h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-white mb-1">Tokens Customizados</h3>
+                        <p class="text-sm text-slate-400">Trabalho manual de modelagem para os marcadores de recursos.</p>
+                    </div>
+                </div>
+                
+                <!-- Imagem 7 (Moedas) -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group md:col-span-2 lg:col-span-3">
+                    <div class="h-48 overflow-hidden bg-black flex flex-row">
+                        <img src="BS/Prototipo_moeda_cara.jpg" alt="Moeda Cara" class="w-1/2 h-full object-cover border-r border-slate-900 group-hover:opacity-80 transition-opacity duration-300">
+                        <img src="BS/Prototipo_moeda_coroa.jpg" alt="Moeda Coroa" class="w-1/2 h-full object-cover group-hover:opacity-80 transition-opacity duration-300">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-white mb-1">Protótipo de Moedas (Cara e Coroa)</h3>
+                        <p class="text-sm text-slate-400">Detalhe do trabalho artesanal para criar a moeda física que movimenta a economia do jogo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé Simples -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-6 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm">© Eduardo Faradezo. Projeto Blacksmith.</p>
+        </div>
+    </footer>
+</body>
+</html>
