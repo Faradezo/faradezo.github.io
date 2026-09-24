@@ -54,13 +54,13 @@
     <header class="relative pt-16 h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <!-- Imagem de Fundo (Propaganda) -->
         <div class="absolute inset-0 z-0">
-            <img src="BS/Propaganda.png" alt="Cenário de Blacksmith" class="w-full h-full object-cover opacity-40">
+            <img src="Jogos/BS/Propaganda.png" alt="Cenário de Blacksmith" class="w-full h-full object-cover opacity-40">
             <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent"></div>
         </div>
 
         <!-- Logo e Título -->
         <div class="relative z-10 text-center px-4">
-            <img src="BS/Logo_simples_sem_fundo.png" alt="Logo Blacksmith"
+            <img src="Jogos/BS/Logo_simples_sem_fundo.png" alt="Logo Blacksmith"
                 class="mx-auto h-32 md:h-48 object-contain mb-4 rounded-xl shadow-2xl bg-white/10 p-2 backdrop-blur-sm">
             <p class="text-xl md:text-2xl text-slate-300 font-light">Gerencie sua forja. Equipe o reino. Sobreviva à
                 guerra.</p>
@@ -70,21 +70,50 @@
     <!-- Conteúdo Principal -->
     <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
 
-        <!-- Seção: Sobre o Jogo (Placeholder) -->
+        <!-- Seção: Sobre o Jogo -->
         <section class="mb-16 bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-lg">
             <h2 class="text-3xl font-bold text-purple-400 mb-6 border-b border-slate-700 pb-2">
                 <i class="fa-solid fa-scroll mr-3"></i>O Projeto
             </h2>
-            <div class="text-slate-300 space-y-4 leading-relaxed text-lg">
+            <div class="text-slate-300 space-y-5 leading-relaxed text-lg">
                 <p>
-                    <strong>[Substitua este texto futuramente]</strong> Blacksmith é um jogo de tabuleiro focado em
-                    gerenciamento de recursos e alocação de trabalhadores. Aqui você descreverá a premissa principal do
-                    jogo, o que inspirou a sua criação e qual é o objetivo dos jogadores em cada partida.
+                    A Grande Guerra acabou, mas a paz exige lâminas afiadas. O Rei convocou os maiores mestres ferreiros
+                    do reino para uma competição épica na capital, com a duração de exatos 20 turnos. O grande vencedor
+                    não apenas receberá o título de Ferreiro Real, mas também um prêmio lendário que promete segurança
+                    vitalícia e férias eternas nas cobiçadas Ilhas de Bahamas.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat.
+                    Em <strong>Blacksmith</strong>, você assume o controle do seu próprio tabuleiro de ferraria e
+                    precisa provar que é o melhor. O objetivo não é simplesmente forjar qualquer arma, mas criar uma
+                    verdadeira obra-prima. Para vencer, sua espada final será avaliada pelo Grande Juiz Real em quatro
+                    rigorosos atributos: a <strong>Resistência</strong> do metal, a <strong>Beleza</strong> dos adornos,
+                    a <strong>Afiação</strong> da lâmina e, o mais desafiador de todos, o <strong>Equilíbrio</strong>
+                    perfeito de peso entre todas as partes.
+                </p>
+                <p>
+                    O jogo é um "Eurogame" de gerenciamento de recursos e alocação de trabalhadores com um toque
+                    realista de metalurgia. Durante a partida, você precisará:
+                </p>
+
+                <!-- Lista estilizada com Tailwind -->
+                <ul class="list-disc pl-6 space-y-3 text-slate-300 marker:text-purple-500">
+                    <li><strong>Extrair recursos:</strong> Vá à Mina contando com a sorte e a precisão para encontrar
+                        desde o simples Cobre até o valioso Titânio ou pedras preciosas.</li>
+                    <li><strong>Controlar a Fornalha:</strong> Monitore rigorosamente os níveis de calor, alimentando-a
+                        com madeira ou carvão, pois ligas nobres exigem temperaturas altíssimas.</li>
+                    <li><strong>Dominar a Têmpera:</strong> Decida entre água ou óleo para garantir que o choque térmico
+                        dê a resistência perfeita ao seu aço.</li>
+                </ul>
+
+                <p>
+                    Mas a capital é cheia de tentações e trapaças. Além do mercado oficial, você cruzará com o Caixeiro
+                    Viajante e o Alquimista Vagante. Através deles, é possível contratar ajudantes, lapidar Runas
+                    místicas para encantar sua espada, ou até mesmo adquirir poções duvidosas e contratar ladrões para
+                    sabotar a oficina dos seus concorrentes.
+                </p>
+
+                <p class="text-purple-400 font-semibold text-xl mt-6">
+                    Prepare seu martelo. O relógio está correndo, o fogo está ardendo e o Rei não aceita falhas.
                 </p>
             </div>
         </section>
@@ -100,7 +129,7 @@
                 <div
                     class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
                     <div class="h-48 overflow-hidden bg-black">
-                        <img src="BS/Primeiro_teste.png" alt="Primeiro teste"
+                        <img src="Jogos/BS/Primeiro_teste.png" alt="Primeiro teste"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-4">
@@ -114,7 +143,7 @@
                 <div
                     class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
                     <div class="h-48 overflow-hidden bg-black">
-                        <img src="BS/Prototipo_sugestao_montagem.png" alt="Montagem da mesa"
+                        <img src="Jogos/BS/Prototipo_sugestao_montagem.png" alt="Montagem da mesa"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-4">
@@ -128,7 +157,7 @@
                 <div
                     class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
                     <div class="h-48 overflow-hidden bg-black flex justify-center">
-                        <img src="BS/Kit_prototipo.png" alt="Componentes embalados"
+                        <img src="Jogos/BS/Kit_prototipo.png" alt="Componentes embalados"
                             class="h-full object-contain group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-4">
@@ -142,7 +171,7 @@
                 <div
                     class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
                     <div class="h-48 overflow-hidden bg-black">
-                        <img src="BS/Tabuleiro_principal_V102.png" alt="Tabuleiro Impresso"
+                        <img src="Jogos/BS/Tabuleiro_principal_V102.png" alt="Tabuleiro Impresso"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-4">
@@ -156,7 +185,7 @@
                 <div
                     class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
                     <div class="h-48 overflow-hidden bg-black">
-                        <img src="BS/Tabuleiro_principal_V101.png" alt="Tabuleiro Digital"
+                        <img src="Jogos/BS/Tabuleiro_principal_V101.png" alt="Tabuleiro Digital"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-4">
@@ -169,7 +198,7 @@
                 <div
                     class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group">
                     <div class="h-48 overflow-hidden bg-black flex justify-center">
-                        <img src="BS/Prototipo_tokens.png" alt="Tokens customizados"
+                        <img src="Jogos/BS/Prototipo_tokens.png" alt="Tokens customizados"
                             class="h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-4">
@@ -183,15 +212,16 @@
                 <div
                     class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500 transition-colors shadow-lg group md:col-span-2 lg:col-span-3">
                     <div class="h-48 overflow-hidden bg-black flex flex-row">
-                        <img src="BS/Prototipo_moeda_cara.png" alt="Moeda Cara"
+                        <img src="Jogos/BS/Prototipo_moeda_cara.png" alt="Moeda Cara"
                             class="w-1/2 h-full object-cover border-r border-slate-900 group-hover:opacity-80 transition-opacity duration-300">
-                        <img src="BS/Prototipo_moeda_coroa.png" alt="Moeda Coroa"
+                        <img src="Jogos/BS/Prototipo_moeda_coroa.png" alt="Moeda Coroa"
                             class="w-1/2 h-full object-cover group-hover:opacity-80 transition-opacity duration-300">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-white mb-1">Protótipo de Moedas (Cara e Coroa)</h3>
                         <p class="text-sm text-slate-400">Detalhe do trabalho artesanal para criar a moeda física que
-                            movimenta a economia do jogo.</p>
+                            movimenta a economia do jogo. Feitas com processo de prensagem manual tornando cada uma
+                            unica.</p>
                     </div>
                 </div>
 
